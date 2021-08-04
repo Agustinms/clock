@@ -40,7 +40,8 @@ public class Frame extends JFrame implements ActionListener{
 	JMenuItem hunItem;
 	JMenuItem afrItem;
 	boolean horarioCambiado = false;
-	
+
+	ImageIcon logo = new ImageIcon(getClass().getClassLoader().getResource("resources/clock.png"));
 	
 	
 			
@@ -98,10 +99,14 @@ public class Frame extends JFrame implements ActionListener{
 		this.add(dateLabel);
 		this.setVisible(true);
 		
+		setIconImage(logo.getImage());
+		
+		
 		
 		setTime();
 
-	
+		
+		
 	}
 	
 	public void setTime() { //Para que se actualice cada segundo
