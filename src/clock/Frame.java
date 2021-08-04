@@ -30,6 +30,7 @@ public class Frame extends JFrame implements ActionListener{
 	JLabel dayLabel;
 	JLabel dateLabel;
 	JLabel dayIcon;
+	JLabel currentZone;
 	String time;
 	String day;
 	String date;
@@ -52,7 +53,7 @@ public class Frame extends JFrame implements ActionListener{
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setTitle("Reloj Calendario");
 		this.setLayout(new FlowLayout());
-		this.setSize(300, 220);
+		this.setSize(300, 240);
 		this.setResizable(false);
 		
 		
@@ -72,6 +73,8 @@ public class Frame extends JFrame implements ActionListener{
 		
 		dateLabel = new JLabel();
 		dateLabel.setFont(new Font("Verdana", Font.PLAIN, 25));
+		
+		currentZone = new JLabel("Buenos Aires, Argentina");
 		
 		//Menu para elegir que zona mostrar
 		JMenuBar mb = new JMenuBar();
@@ -97,6 +100,7 @@ public class Frame extends JFrame implements ActionListener{
 		this.add(timeLabel);
 		this.add(dayLabel);
 		this.add(dateLabel);
+		this.add(currentZone);
 		this.setVisible(true);
 		
 		setIconImage(logo.getImage());
@@ -159,21 +163,23 @@ public class Frame extends JFrame implements ActionListener{
 
 		if(e.getSource() == argItem) {
 			index = 0;
-			
-			System.out.println(index);
+			currentZone.setText("Buenos Aires, Argentina");
 			horarioCambiado = true;
 			setTime();
 		}else if(e.getSource() == hunItem) {
 			horarioCambiado = true;
 			index = 1;
+			currentZone.setText("Budapest, Hungría");
 			setTime();
 		}else if(e.getSource() == japItem) {
 			horarioCambiado = true;
 			index = 2;
+			currentZone.setText("Japón");
 			setTime();
 		}else {
 			horarioCambiado = true;
 			index = 3;
+			currentZone.setText("Luanda, África");
 			setTime();
 		}
 		
