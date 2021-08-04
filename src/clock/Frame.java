@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URL;
@@ -40,14 +41,18 @@ public class Frame extends JFrame implements ActionListener{
 	JMenuItem afrItem;
 	boolean horarioCambiado = false;
 	
+	
+	
+			
+			
+			
+			
 	Frame(){
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setTitle("Reloj Calendario");
 		this.setLayout(new FlowLayout());
 		this.setSize(300, 220);
 		this.setResizable(false);
-		
-		//
 		
 		
 		timeFormat = new SimpleDateFormat("HH:mm:ss");
@@ -95,7 +100,6 @@ public class Frame extends JFrame implements ActionListener{
 		
 		
 		setTime();
-		
 
 	
 	}
