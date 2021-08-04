@@ -109,9 +109,9 @@ public class Frame extends JFrame implements ActionListener{
 		dayFormat.setTimeZone(TimeZone.getTimeZone(zoneIds[index]));
 		String today = dayFormat.format(now);
 		dayLabel.setText(today);
-		date = dateFormat.format(Calendar.getInstance().getTime());
+		dateFormat.setTimeZone(TimeZone.getTimeZone(zoneIds[index]));
+		String date = dateFormat.format(now);
 		dateLabel.setText(date);
-		System.out.println(time);
 		
 		//Pasar el horario actual a int asi podemos saber si es de dia o de noche
 		String horaActual[] = time.split(":");
