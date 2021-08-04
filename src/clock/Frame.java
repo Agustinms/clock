@@ -42,7 +42,7 @@ public class Frame extends JFrame implements ActionListener{
 	
 	Frame(){
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		this.setTitle("Reloj");
+		this.setTitle("Reloj Calendario");
 		this.setLayout(new FlowLayout());
 		this.setSize(300, 220);
 		this.setResizable(false);
