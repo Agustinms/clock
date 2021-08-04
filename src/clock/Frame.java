@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -118,10 +119,18 @@ public class Frame extends JFrame implements ActionListener{
 		int hora = Integer.parseInt(horaActual[0]);
 		
 		if(hora > 18 || hora < 6) {
-			ImageIcon moon = new ImageIcon(new ImageIcon("moon.png").getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
+			URL url = Main.class.getResource("/resources/moon.png");
+			ImageIcon moon = new ImageIcon(url);
+			Image moonImg = moon.getImage();
+			Image moonScaled = moonImg.getScaledInstance(20, 20,  java.awt.Image.SCALE_SMOOTH);
+			moon = new ImageIcon(moonScaled);
 			dayLabel.setIcon(moon);
 		}else {
-			ImageIcon sun = new ImageIcon(new ImageIcon("sun.png").getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
+			URL url = Main.class.getResource("/resources/sun.png");
+			ImageIcon sun = new ImageIcon(url);
+			Image sunImg = sun.getImage();
+			Image sunScaled = sunImg.getScaledInstance(20, 20,  java.awt.Image.SCALE_SMOOTH);
+			sun = new ImageIcon(sunScaled);
 			dayLabel.setIcon(sun);
 		}
 	
